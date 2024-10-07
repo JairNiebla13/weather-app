@@ -31,8 +31,8 @@ function RenderWeather({ weather, error }) {
             {error && <p>Error: {error}</p>}
             {weather.name && (
                 <>
-                    <h3>{weather.name}</h3>
-                    <p>{weather.main && weather.main.temp ? `${weather.main.temp} C°` : "Temperatura no disponible"}</p>
+                    <h3 id='name_city'>{weather.name}</h3>
+                    <p id=''>{weather.main && weather.main.temp ? `${weather.main.temp} C°` : "Temperatura no disponible"}</p>
                     <p>{weather.weather[0].main}</p>
                     <p>{weather.main && weather.main.humidity ? `Humidity: ${weather.main.humidity} %` : "Humedad no disponible"}</p>
                     <img src={getWeatherImage(weatherCondition)} alt="img" />
