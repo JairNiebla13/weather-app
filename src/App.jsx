@@ -19,7 +19,6 @@ function App() {
     });
   };
 
-  console.log(isAuth);
   return (
     <BrowserRouter>
       <nav className="bg-slate-700 flex justify-between items-center border-gray-500">
