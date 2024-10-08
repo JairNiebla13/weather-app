@@ -11,6 +11,8 @@ function UserPage({ isAuth }) {
             navigate("/login");
         }
     }, []);
+
+
     return (
         <div>
             <div className='bg-slate-800 min-h-screen flex items-center justify-center'>
