@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SearchWeather from './SearchWeather';
 import RenderWeather from './RenderWeather';
 import { db, auth } from '../firebase-config';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 const api = {
     key: "f1ebc685ca4622a690e800786572f17d",
@@ -24,7 +24,8 @@ function CallWeather() {
                 temperature: weather.main.temp,
                 humidity: weather.main.humidity,
                 condition: weather.weather[0].main,
-                author: { name: auth.currentUser.displayName, id: auth.currentUser.uid }
+                id: auth.currentUser.uid ,
+                timestamp: serverTimestamp(),
             });
         } catch (error) {
             console.error('Error adding document: ', error);
