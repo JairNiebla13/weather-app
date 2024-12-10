@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import UserPage from './pages/UserPage';
 import { auth } from './firebase-config';
 import { signOut } from 'firebase/auth';
+import Register from './pages/Register';
 
 function App() {
 
@@ -30,7 +31,10 @@ function App() {
             isAuth ? (
               <button onClick={signUserOut}><img src={logout} alt="logout-image" className='w-10' /></button>
             ) : (
-              <Link to="/login" className="bg-sky-300 rounded-sm flex space-x-4 mr-4">Login</Link>
+              <>
+                <Link to="/login" className="bg-sky-300 rounded-sm flex space-x-4 mr-4">Login</Link>
+                <Link to="/register" className="bg-gray-400">Register</Link>
+              </>
             )
           }
         </div>
@@ -38,7 +42,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
-        <Route path='/userpage' element={<UserPage isAuth={isAuth} auth={auth}/>} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/userpage' element={<UserPage isAuth={isAuth} auth={auth} />} />
       </Routes>
     </BrowserRouter>
   )

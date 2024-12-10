@@ -24,7 +24,7 @@ function CallWeather() {
                 temperature: weather.main.temp,
                 humidity: weather.main.humidity,
                 condition: weather.weather[0].main,
-                id: auth.currentUser.uid ,
+                id: auth.currentUser.uid,
                 timestamp: serverTimestamp(),
             });
         } catch (error) {

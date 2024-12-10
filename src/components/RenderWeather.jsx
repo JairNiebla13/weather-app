@@ -39,9 +39,9 @@ function RenderWeather({ weather, error, saveWeatherToFirestore }) {
                     <img src={getWeatherImage(weatherCondition)} alt="img" />
                     <div className='flex-row justify-between'>
                         <button onClick={saveWeatherToFirestore}>
-                            Guardar
+                            <img src={Save} alt="save-img" className='w-4' />
                         </button>
-                        <img src={Save} alt="save-img" className='w-4' />
+
                     </div>
                 </>
             )}
